@@ -1,0 +1,11 @@
+security: 用户权限管理
+	1、配置枚举值Role角色
+	2、设置用户，每个用户有一个角色
+	3、设置从数据库获取用户的类，必须实例UserDetailsService，并实现loadUserByUsername方法
+		注意，虽然只有username,但是若密码不正确，依旧不能通过验证，（-----------需要研究）
+	4、设置权限管理类，那些url需要权限，哪些不需要(必须继承extends WebSecurityConfigurerAdapter)
+说明：
+	1、使用spring security之后，不用写专门的login方法来验证用户登陆信息，交由security来操作
+	2、security登陆成功之后会跳转到"/",即使在config中设置了跳转的路径，已不管用（-----研究）
+
+		
